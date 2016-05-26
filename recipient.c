@@ -14,7 +14,9 @@ char text[MAX];
 int foo(struct msgbuf *my_data)
 {
 int i=0;
-for(i;i<5;++i)
+for(i;i<5;++i) //zmienna jest statyczna poniewaz przy uzyciu sizeof dla zmiennej skladowej pętla wychodziła mi nieznacznie
+               //poza zakres, dostawalem wtedy smieciowe dane, co powodowało, że pierwszy warunek zwracał wartosc 0, i przez
+               //to program nie mogl odebrac prawidlowo komunikatu
 {
 if(my_data->text[i]<0 || my_data->text[i]>256)
 {
