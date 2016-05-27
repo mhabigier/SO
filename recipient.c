@@ -16,7 +16,7 @@ int foo(struct msgbuf *my_data)
 int i=0;
 for(i;i<5;++i) //Zmienna jest statyczna poniewaz przy uzyciu sizeof dla zmiennej skladowej pętla wychodziła mi nieznacznie
                //poza zakres. Dostawałem wtedy śmieciowe dane(niestety nie wiem gdzie leży przyczyna), co powodowało,
-               //że pierwszy warunek zwracał wartosc 0, a przez to program nie ł odebrac prawidłowo komunikatu. 
+               //że pierwszy warunek zwracał wartosc 0, a przez to program nie mógł odebrac prawidłowo komunikatu. 
 {
 if(my_data->text[i]<0 || my_data->text[i]>256)
 {
