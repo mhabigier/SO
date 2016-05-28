@@ -71,6 +71,13 @@ if(msgctl(msgid, IPC_RMID, 0) == -1 || x==0)
 printf("System error, or wrong type of message\n");
 return -1;
 }
+int file = open("word.data", O_CREAT|O_RDWR, 0666);
+if(file==-1)
+printf("Could not create a file");
+else
+file = write(file, my_data.text, sizeof(((struct msgbuf*)0)->text));
+close(file);
+}
 }
 
 return 0;
