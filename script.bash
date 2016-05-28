@@ -8,8 +8,9 @@ echo "Skrypt wysyla, a następnie odbiera komunikat pod pewnymi warunkami, oraz 
 zm=`cat word.data | head -1`
 zm2=`echo "$zm" | aspell -a --lang=pl`
 gwiazdka=$(echo "$zm2" | sed -n 2p)
-echo "$gwiazdka"
-if [[ `echo $gwiazdka` == "*" ]] 
+echo "$gwiazdka" #test
+if [[ `echo $gwiazdka` == "*" ]] #Zauważyłem, że jeśli słówko jest w jężyku polskim to aspell wypisuje gwiazdkę. Chciałem 
+				 #to wykorzystać w instrukcji warunkowej, jednak nie mam pojęcia dlaczego to nie działa
 then
 	echo "To slowo istnieje w slowniku"
 else
