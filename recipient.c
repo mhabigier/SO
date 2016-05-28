@@ -75,7 +75,7 @@ int file = open("word.data", O_CREAT|O_RDWR, 0666);
 if(file==-1)
 printf("Could not create a file");
 else
-file = write(file, my_data.text, sizeof(((struct msgbuf*)0)->text));
+file = write(file, my_data.text, sizeof(((struct msgbuf*)0)->text)); //Zapisanie do pliku w celu sprawdzenia przez aspell
 close(file);
 }
 }
